@@ -30,10 +30,10 @@ export const SearchFormContainer = styled.form`
         font-weight: bold;
         border-radius: 6px;
         cursor: pointer;
-        cursor: not-allowed;
 
         &:disabled{
             opacity: 0.6;
+            cursor: not-allowed;
         }
 
         &:not(:disabled):hover{

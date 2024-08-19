@@ -1,5 +1,6 @@
-import {  createContext, ReactNode, useEffect, useState } from "react";
+import {  ReactNode, useEffect, useState, useCallback } from "react";
 import { api } from "../lib/axios";
+import { createContext } from "use-context-selector";
 
 interface Transaction {
     id: number;
@@ -34,7 +35,7 @@ export function TransactionsProvider({children}: TransactionsProviderProps){
     
     const [transactions, setTransactions] = useState<Transaction[]>([])
 
-    async function fetchTransactions(query?: string){
+    const fetchTransactions = useCallback(async (query?: string)=>{
 
         const response = await api.get('transactions',{
             params: {
@@ -45,9 +46,9 @@ export function TransactionsProvider({children}: TransactionsProviderProps){
         })
 
         setTransactions(response.data);
-    }
-
-    async function createTransaction(data: CreateTransactionInput){
+    },[])
+    // useCallback - evita que uma função seja recriada em memoria sem q nenhuma informação dela tenha mudado
+    const  createTransaction = useCallback(async (data: CreateTransactionInput)=>{
         const {description, category, price, type } =  data;
         
         const response = await api.post('transactions',{
@@ -59,7 +60,9 @@ export function TransactionsProvider({children}: TransactionsProviderProps){
         })
 
         setTransactions(state=>[response.data, ...state]);
-    }
+    }, [])//2º param - array de dependencias como no userEffect
+    //se depender de alguma informação de fora, precisa estar nesse array, 
+    //se não o valor da inf estara desatualizado
 
     useEffect(()=>{       
         fetchTransactions();

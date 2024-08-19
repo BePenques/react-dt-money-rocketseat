@@ -31,6 +31,14 @@
       "type": "outcome",
       "createdAt": "2024-08-09T20:54:58.426Z",
       "id": 4
+    },
+    {
+      "description": "ração minnie",
+      "category": "Animais de estimação",
+      "price": 50,
+      "type": "outcome",
+      "createdAt": "2024-08-17T13:06:28.790Z",
+      "id": 5
     }
   ]
 }

@@ -1,30 +1,17 @@
-# React + TypeScript + Vite
+### Projeto prático do terceiro nivel de formação do curso ReactJS da plataforma Rocketseat
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação de gestão financeira, que contem as funcionalidades:
+- cadastrar transações de entrada e saida
+- listagem de todas as transações
+- somatoria de entradas e saidas, e saldo atual
 
-Currently, two official plugins are available:
+Layout Figma: https://www.figma.com/design/4ZsfPjVzg7wEqA0xSosmnq/DT-Money-(Community)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Para rodar:
+git clone
 
-## Expanding the ESLint configuration
+npm i
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+npm run dev
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+acessar http://localhost:5173/
